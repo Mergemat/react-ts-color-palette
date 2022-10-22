@@ -29,7 +29,7 @@ function App() {
   // };
 
   return (
-    <div className="h-screen max-h-screen w-full">
+    <div className="absolute inset-0">
       <div className="flex h-[calc(100%-80px)] w-full flex-col justify-between md:h-full md:flex-row">
         {cards.map((card) => (
           <ColorCard key={card.id} card={card} onClick={onCardClick} />
