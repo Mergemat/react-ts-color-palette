@@ -3,11 +3,14 @@ import { blackOrWhiteLum, getRandomColor } from './colors';
 
 const getDefaultCards = (): IColorCard[] => {
   if (document.location.hash != '') {
-    const hexes = document.location.hash.split('-');
+    const hexes = document.location.hash.slice(1).split('-');
     return hexes.map((hex, index) => ({
       id: index,
       isLocked: false,
-      color: { hex, contrast: blackOrWhiteLum(hex) ? 'black' : 'white' },
+      color: {
+        hex: '#' + hex,
+        contrast: blackOrWhiteLum('#' + hex) ? 'black' : 'white',
+      },
     }));
   }
   const def: IColorCard[] = [];

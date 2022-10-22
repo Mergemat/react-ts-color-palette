@@ -19,7 +19,9 @@ const useCards = (
   };
 
   useEffect(() => {
-    document.location.hash = cards.map((card) => card.color.hex).join('-');
+    document.location.hash = cards
+      .map((card) => card.color.hex.replace('#', ''))
+      .join('-');
   }, [cards]);
 
   const flipCards = (): void => {
