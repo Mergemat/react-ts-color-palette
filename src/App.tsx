@@ -1,5 +1,5 @@
 import { ColorCard } from './components/ColorCard';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import useCards from './hooks/useCard';
 import { getDefaultCards } from './utils/cards';
 
@@ -10,23 +10,19 @@ function App() {
     lockCard(cardId);
   };
 
-  const handleSpaceBar = (event: KeyboardEvent) => {
+  const handleSpaceBar = useCallback((event: KeyboardEvent) => {
     if (event.code.toLowerCase() === 'space') {
       flipColors();
     }
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener('keydown', handleSpaceBar);
 
-    return () => document.removeEventListener('keydown', handleSpaceBar);
-  }, []);
-
-  // document.body.onkeyup = (e) => {
-  //   if (e.key == ' ') {
-  //     flipColors();
-  //   }
-  // };
+    return () => {
+      document.removeEventListener('keydown', handleSpaceBar);
+    };
+  }, [handleSpaceBar]);
 
   return (
     <div className="absolute inset-0">
@@ -35,7 +31,7 @@ function App() {
           <ColorCard key={card.id} card={card} onClick={onCardClick} />
         ))}
       </div>
-      <button onClick={flipColors} className="flip-button">
+      <button onKeyUp={(e) => e.preventDefault()} onClick={flipColors} className="flip-button">
         FLIP
       </button>
     </div>
