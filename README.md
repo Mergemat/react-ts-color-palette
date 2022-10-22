@@ -1,2 +1,3 @@
 # react-ts-color-palette
-<img width="1674" alt="изображение" src="https://user-images.githubusercontent.com/38819496/197316068-29e6b7a7-6360-4b7c-a637-5450a16f3217.png">
+<img width="1674" alt="изображение" src="https://user-images.githubusercontent.com/38819496/197316093-59b7f14e-e3c0-4b12-bdfb-112517c99e75.png">
+
