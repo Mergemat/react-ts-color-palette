@@ -10,11 +10,23 @@ function App() {
     lockCard(cardId);
   };
 
-  document.body.onkeyup = (e) => {
-    if (e.key == ' ') {
+  const handleSpaceBar = (event: KeyboardEvent) => {
+    if (event.code.toLowerCase() === 'space') {
       flipColors();
     }
   };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleSpaceBar);
+
+    return () => document.removeEventListener('keydown', handleSpaceBar);
+  }, []);
+
+  // document.body.onkeyup = (e) => {
+  //   if (e.key == ' ') {
+  //     flipColors();
+  //   }
+  // };
 
   return (
     <div className="h-screen max-h-screen w-full">
