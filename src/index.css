@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .color-copy {
+    @apply absolute bottom-1/2 right-40 
+    translate-y-1/2 scale-0 select-none rounded-xl 
+    p-2 text-center text-xl 
+    font-semibold md:bottom-12 md:right-1/2 
+    md:-translate-y-0 md:translate-x-1/2;
+  }
+
+  .color-text {
+    @apply relative cursor-pointer
+    rounded-xl p-3 text-3xl  
+    font-semibold duration-75 hover:scale-105;
+  }
+
+  .card {
+    @apply flex h-full w-full flex-row 
+    items-center justify-center space-x-3 md:h-full md:w-1/2 
+    md:flex-col md:space-x-0 md:space-y-3;
+  }
+
+  .flip-button {
+    @apply absolute bottom-0 mb-0 mt-auto max-h-20 w-full select-none bg-white px-10 py-5 text-3xl font-bold 
+    text-black duration-75 md:fixed md:left-1/2 md:bottom-10 md:w-auto 
+    md:-translate-x-1/2 md:rounded-full md:bg-opacity-30 md:text-white md:shadow-sm 
+    md:backdrop-blur-sm md:hover:scale-105;
+  }
+}
