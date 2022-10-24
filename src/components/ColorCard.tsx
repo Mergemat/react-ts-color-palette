@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BiLock, BiLockOpen } from 'react-icons/bi';
 import IColorCard from '../types';
 
+
 type ColorCardProps = {
   card: IColorCard;
   onClick: (cardId: number) => void;
@@ -11,6 +12,7 @@ const ColorCard = ({ card, onClick }: ColorCardProps) => {
   const { id, isLocked } = card;
   const { hex, contrast } = card.color;
   const [isCopied, setIsCopied] = useState<boolean>(false);
+
 
   const copyColor = (): void => {
     navigator.clipboard.writeText(hex);
