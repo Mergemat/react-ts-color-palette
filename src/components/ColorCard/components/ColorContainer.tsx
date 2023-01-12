@@ -1,13 +1,13 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
 
-type CardContainerProps = {
+type ColorContainerProps = {
   hex: string;
 };
 
-const CardContainer = ({
+const ColorContainer = ({
   hex,
   children,
-}: PropsWithChildren<CardContainerProps>) => {
+}: PropsWithChildren<ColorContainerProps>) => {
   return (
     <div className="card" style={{ backgroundColor: hex }}>
       {children}
@@ -15,4 +15,4 @@ const CardContainer = ({
   );
 };
 
-export default CardContainer;
+export default ColorContainer;

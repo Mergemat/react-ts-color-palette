@@ -1,7 +1,7 @@
 import HexLabel from './components/HexLabel';
 import LockButton from './components/LockButton';
 import IColorCard from '../../types';
-import CardContainer from '../../containers/CardContainer';
+import ColorContainer from './components/ColorContainer';
 
 type ColorCardProps = {
   card: IColorCard;
@@ -13,7 +13,7 @@ const ColorCard = ({ card, onClick }: ColorCardProps) => {
   const { hex, contrast } = card.color;
 
   return (
-    <CardContainer hex={hex}>
+    <ColorContainer hex={hex}>
       <HexLabel contrast={contrast} hex={hex} />
       <LockButton
         onClick={onClick}
@@ -21,7 +21,7 @@ const ColorCard = ({ card, onClick }: ColorCardProps) => {
         contrast={contrast}
         isLocked={isLocked}
       />
-    </CardContainer>
+    </ColorContainer>
   );
 };
 
